@@ -31,16 +31,6 @@ jobs:
 # Anything under v1.20 requires Ubuntu 20.04 due to a cgroups v1 requirement. 
 #        k3s: [v1.16, v1.17,v1.18,v1.19]
     steps:
-# vmmeter start
-      - uses: alexellis/arkade-get@master
-        with:
-          crane: latest
-          print-summary: false
-      - name: Install vmmeter
-        run: |
-          crane export --platform linux/arm64 ghcr.io/openfaasltd/vmmeter:latest | sudo tar -xvf - -C /usr/local/bin
-      - uses: self-actuated/vmmeter-action@master
-# vmmeter end
 
       - uses: actions/checkout@v4
       - name: Setup mirror
